@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Book</title>
-    <link rel="Stylesheets" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>My Recipe Book</h1>
+    </header>
+    <main>
+        <section id="recipe-form">
+            <h2>Add New Recipe</h2>
+            <form id="add-recipe-form">
+                <input type="text" id="recipe-name" placeholder="Recipe Name" required>
+                <textarea id="recipe-ingredients" placeholder="Ingredients (one per line)" required></textarea>
+                <textarea id="recipe-instructions" placeholder="Instructions" required></textarea>
+                <input type="file" id="recipe-image" accept="image/*">
+                <button type="submit">Add Recipe</button>
+            </form>
+        </section>
+        <section id="recipe-list">
+            <h2>My Recipes</h2>
+            <div id="recipes-container"></div>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
