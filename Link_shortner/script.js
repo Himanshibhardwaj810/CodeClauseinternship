@@ -48,21 +48,26 @@ function generateShortCode() {
 
 function generateQRCode(url) {
     const qrCodeElement = document.getElementById('qrCode');
-    qrCodeElement.innerHTML = '';
+    qrCodeElement.innerHTML = ''; // Clear previous QR code
     new QRCode(qrCodeElement, {
         text: url,
         width: 128,
-        height: 128
+        height: 128,
+        colorDark: "#667eea",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
     });
 }
 
 // Simulate link clicking (in a real application, this would be handled by the backend)
-document.getElementById('shortUrl').addEventListener('click', function(e) {
-    e.preventDefault();
-    const shortCode = this.href.split('/').pop();
-    if (urlDatabase[shortCode]) {
-        urlDatabase[shortCode].clicks++;
-        document.getElementById('clickCount').textContent = urlDatabase[shortCode].clicks;
-        window.open(urlDatabase[shortCode].longUrl, '_blank');
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('shortUrl').addEventListener('click', function(e) {
+        e.preventDefault();
+        const shortCode = this.href.split('/').pop();
+        if (urlDatabase[shortCode]) {
+            urlDatabase[shortCode].clicks++;
+            document.getElementById('clickCount').textContent = urlDatabase[shortCode].clicks;
+            window.open(urlDatabase[shortCode].longUrl, '_blank');
+        }
+    });
 });

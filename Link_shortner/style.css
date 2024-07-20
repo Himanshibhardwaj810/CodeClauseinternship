@@ -1,5 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  
+  }
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
@@ -7,55 +23,108 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .container {
     background-color: white;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
+    margin-top:15px ;
+    margin-bottom:15px ;
 }
 
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 1.5rem;
+}
+
+h1 i {
+    margin-right: 10px;
+    color: #667eea;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 input, button {
-    padding: 0.5rem;
+    padding: 0.75rem;
     font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus {
+    outline: none;
+    border-color: #667eea;
 }
 
 button {
-    background-color: #007bff;
+    background-color: #667eea;
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.1s;
+    font-weight: 600;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #5a6fe4;
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 #result {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 #result.hidden {
     display: none;
 }
 
+.result-item {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.result-item h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+#shortUrl {
+    word-break: break-all;
+    color: #667eea;
+    text-decoration: none;
+}
+
+#shortUrl:hover {
+    text-decoration: underline;
+}
+
 #qrCode {
-    display: block;
-    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#clickCount {
+    font-weight: 600;
+    color: #667eea;
 }
