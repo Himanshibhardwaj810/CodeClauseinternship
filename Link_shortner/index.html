@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Shortener</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Link Shortener</h1>
+        <div class="input-group">
+            <input type="url" id="longUrl" placeholder="Enter long URL" required>
+            <input type="text" id="customShortCode" placeholder="Custom short code (optional)">
+            <button onclick="shortenUrl()">Shorten</button>
+        </div>
+        <div id="result" class="hidden">
+            <p>Shortened URL: <a id="shortUrl" target="_blank"></a></p>
+            <p>QR Code:</p>
+            <img id="qrCode" src="" alt="QR Code">
+            <p>Clicks: <span id="clickCount">0</span></p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
